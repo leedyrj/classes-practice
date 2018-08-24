@@ -9,33 +9,32 @@ namespace classes
         {
             // Create an instance of a company. Name it whatever you like.
 
-            Company macroManager = new Company(companyName: "MACROmanager", companyCreated: DateTime.Now) { };
+            Company macroManager = new Company("MACROmanager", DateTime.Now) { };
 
             // Create three employees
 
-            Employees robert = new Employees()
-            {
-                firstName = "Robert",
-                lastName = "Leedy",
-                Title = "President/CEO",
-                startDate = DateTime.Now
-            };
+            Employees robert = new Employees(
+                "Robert",
+                "Leedy",
+                "President/CEO",
+                DateTime.Now
+            );
 
-            Employees melia = new Employees()
-            {
-                firstName = "Melia",
-                lastName = "Leedy",
-                Title = "COO",
-                startDate = DateTime.Now
-            };
+            Employees melia = new Employees(
 
-            Employees aaron = new Employees()
-            {
-                firstName = "Aaron",
-                lastName = "Miller",
-                Title = "CFO",
-                startDate = DateTime.Now
-            };
+                "Melia",
+                "Leedy",
+                "COO",
+                DateTime.Now
+            );
+
+            Employees aaron = new Employees(
+
+                "Aaron",
+                "Miller",
+                "CFO",
+                DateTime.Now
+            );
 
             // Assign the employees to the company
 
@@ -54,7 +53,7 @@ namespace classes
 
             foreach (Employees emp in macroManager.employeeList)
             {
-                Console.WriteLine($"{emp.firstName} {emp.lastName} works for {macroManager.Name} as {emp.Title} since {emp.startDate}");
+                Console.WriteLine($"{emp.firstName} {emp.lastName} has worked for {macroManager.Name} as {emp.Title} since {emp.startDate}");
             }
         }
     }
